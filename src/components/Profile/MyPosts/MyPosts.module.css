@@ -1,0 +1,27 @@
+.inputArea {
+    position: relative;
+}
+
+.textarea {
+    min-width: 50%;
+    min-height: 60px;
+    margin-bottom: 20px;
+}
+
+.warningMessage {
+    position: absolute;
+    bottom: 0;
+    left: 150px;
+    margin: -20px;
+    padding: 8px;
+    color: red;
+    border-radius: 10px;
+    opacity: 0;
+}
+
+.sendButton {
+    padding: 10px 25px;
+    background-color: palegreen;
+    border: 1px solid #3bf73b;
+    border-radius: 10px;
+}

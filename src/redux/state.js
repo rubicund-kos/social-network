@@ -31,17 +31,26 @@ let state = {
 
 window.state = state;
 
+// the funcion to add a new message
 export const addPost = () => {
     let newPost = {
         id: 5,
         message: state.profilePage.newPostText,
         likesCount: 0
     };
+    prohibitSending();
     state.profilePage.posts.push(newPost);
     state.profilePage.newPostText = '';
     rerenderEntireTree(state);
 };
+// Function prohibits sending message if it is too short
+const prohibitSending = () => {
+    if (state.profilePage.newPostText.length < 3) {
+        alert('Message is too short');
+    }
+}
 
+// the function updates the state when the field changes
 export const updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
     rerenderEntireTree(state);
