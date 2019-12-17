@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1e73aa9-6423-427c-9747-4e0505008473" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Articles/ArticleItem/ArticleItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Articles/Articles.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/News/News.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Articles/Articles.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/News/News.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Articles/ArticleItem/ArticleItem.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/state.js" afterDir="false" />
     </list>
@@ -21,7 +27,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../TestJS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Articles/ArticleItem" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -30,6 +36,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\WorkDocuments\React\social-network\src\components\Articles\ArticleItem" />
       <recent name="D:\WorkDocuments\React\social-network\src\components\Dialogs\DialogItem" />
       <recent name="D:\WorkDocuments\React\social-network\src\components\Dialogs\Message" />
       <recent name="D:\WorkDocuments\React\social-network\src\components\Profile\ProfileInfo" />
