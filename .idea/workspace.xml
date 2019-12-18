@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     <list default="true" id="d1e73aa9-6423-427c-9747-4e0505008473" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/src/components/Articles/ArticleItem/ArticleItem.jsx" afterDir="false" />
@@ -16,6 +17,9 @@
 =======
     <list default="true" id="d1e73aa9-6423-427c-9747-4e0505008473" name="Default Changelist" comment="" />
 >>>>>>> Stashed changes
+=======
+    <list default="true" id="d1e73aa9-6423-427c-9747-4e0505008473" name="Default Changelist" comment="" />
+>>>>>>> refactor-dialogsPage
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +91,7 @@
       <workItem from="1576338828389" duration="8764000" />
       <workItem from="1576415218102" duration="6109000" />
       <workItem from="1576513303342" duration="2536000" />
+      <workItem from="1576690880247" duration="1689000" />
     </task>
     <servers />
   </component>
