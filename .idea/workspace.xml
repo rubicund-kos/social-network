@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d1e73aa9-6423-427c-9747-4e0505008473" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Articles/ArticleItem/ArticleItem.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Articles/Articles.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/News/News.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Articles/Articles.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/News/News.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Articles/ArticleItem/ArticleItem.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/state.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -83,6 +78,7 @@
       <workItem from="1576338828389" duration="8764000" />
       <workItem from="1576415218102" duration="6109000" />
       <workItem from="1576513303342" duration="2536000" />
+      <workItem from="1576690880247" duration="1689000" />
     </task>
     <servers />
   </component>
