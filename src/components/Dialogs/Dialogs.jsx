@@ -9,16 +9,14 @@ const Dialogs = (props) => {
     let dialogsElements = props.state.dialogs.map( dialog => <DialogItem name={dialog.name} id={dialog.id}/> );
     let messagesElements = props.state.messages.map( msg => <Message message={msg.message}/>);
 
-    const newMessage = React.createRef()
-
-    const onNewMessageSend = () => {
+    const onSendMessageClick = () => {
         props.dispatch(onNewMessageSendActionCreator());
     };
 
-    const onMessageEdit = () => {
-        let text = newMessage.current.value;
+    const onMessageEdit = (event) => {
+        let text = event.target.value;
         props.dispatch(onNewMessageChangeActionCreator(text));
-    }
+    };
 
     return (
         <div className={style.dialogs}>
@@ -29,8 +27,8 @@ const Dialogs = (props) => {
                 {messagesElements}
             </div>
             <div>
-                <textarea ref={newMessage} onChange={onMessageEdit}></textarea>
-                <button onClick={onNewMessageSend}>Send</button>
+                <textarea onChange={onMessageEdit} value={props.state.newMessage}></textarea>
+                <button onClick={onSendMessageClick}>Send</button>
             </div>
         </div>
     )
