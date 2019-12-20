@@ -103,9 +103,6 @@ let store = {
                         ]
                     }
                 ],
-                articlesOsho: [
-
-                ]
 
             }
         },

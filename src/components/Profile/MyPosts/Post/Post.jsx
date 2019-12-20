@@ -14,7 +14,7 @@ const Post = (props) => {
 
             <div className={style.message}>
                 <p className={style.text}>{props.message}</p>
-                <a href="#"><img className={style.likeImg} src={like} alt="Like"/></a>
+                <a><img className={style.likeImg} src={like} alt="Like"/></a>
                 <span className={style.likesCount}>{props.likesCount}</span>
             </div>
         </div>
