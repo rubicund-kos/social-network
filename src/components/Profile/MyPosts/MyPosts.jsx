@@ -1,7 +1,6 @@
 import React from 'react';
 import style from './MyPosts.module.css';
 import Post from './Post/Post';
-import {addPostActionCreator, onPostChangeActionCreator} from "../../../redux/profile-Reducer";
 
 
 
@@ -11,12 +10,12 @@ const MyPosts = (props) => {
     const newPostElement = React.createRef()
 
     const onAddPost = () => {
-        props.dispatch(addPostActionCreator());
+        props.addPost();
     };
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.dispatch(onPostChangeActionCreator(text));
+        props.updateNewPostText(text);
     }
 
     return (
@@ -31,7 +30,7 @@ const MyPosts = (props) => {
                     />
                     <p className={style.warningMessage}>Ваше сообщение слишком короткое</p>
                 </div>
-                <button className={style.sendButton} onClick={ onAddPost }>Add post</button>
+                <button className={style.sendButton} onClick={onAddPost}>Add post</button>
             </div>
             <div className={style.posts}>
                 {postElements}

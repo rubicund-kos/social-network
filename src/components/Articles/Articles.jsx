@@ -12,13 +12,12 @@ const Articles = (props) => {
     return (
         <div>
             <div>
-                <ul>
-                    <li>Все статьи</li>
-                    <li>Карлос Кастанеда</li>
-                    <li>Ошо</li>
-                </ul>
+                <button>Все статьи</button>
+                <button>Кастанеда</button>
+                <button>Ошо</button>
             </div>
             <div>
+
                 {articleItems}
             </div>
 
