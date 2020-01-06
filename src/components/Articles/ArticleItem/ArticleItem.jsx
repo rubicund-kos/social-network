@@ -5,7 +5,8 @@ const ArticleItem = (props) => {
         <div>
             <p>{props.article}</p>
             <p><strong>{props.author}</strong></p>
-            <p></p>
+            <textarea></textarea>
+            <button>Send comment</button>
         </div>
     )
 }
