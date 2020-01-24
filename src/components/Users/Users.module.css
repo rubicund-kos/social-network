@@ -1,3 +1,43 @@
+.users {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.imgWrap {
+    text-align: center;
+}
 .userImg {
     width: 120px;
+    border-radius: 50%;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.btn {
+    background-color: palegreen;
+    border: 1px solid green;
+    border-radius: 5%;
+    padding: 8px 20px;
+    transition: all .3s ease;
+}
+.btn:hover {
+    background-color: limegreen;
+    border: 1px solid lime;
+}
+.btn:active {
+    background-color: forestgreen;
+    transform: translate(1px, 2px);
+}
+
+.description {
+    margin-top: 5px;
+}
+
+.name {
+    font-size: 16px;
+    font-weight: bold;
 }

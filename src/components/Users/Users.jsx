@@ -1,53 +1,52 @@
 import React from 'react';
-import styles from './Users.module.css'
+import styles from './Users.module.css';
+import * as axios from 'axios';
+import userPhoto from './../../assets/images/user.png'
 
 const Users = (props) => {
-    if (props.users.length === 0) {
-        props.setUsers([
-            {
-                id: 1, photoUrl: 'http://galerie-pome-turbil.fr/wp-content/uploads/2016/05/hans-silvester4.jpg',
-                followed: false, fullName: 'Dmitry', status: 'I am boss', location: {city: 'Minsk', country: 'Belarus'}
-            },
-            {
-                id: 2, photoUrl: 'http://galerie-pome-turbil.fr/wp-content/uploads/2016/05/hans-silvester4.jpg',
-                followed: true, fullName: 'Kostya', status: 'I am good man', location: {city: 'Kharkiv', country: 'Ukraine'}
-            },
-            {
-                id: 3, photoUrl: 'http://galerie-pome-turbil.fr/wp-content/uploads/2016/05/hans-silvester4.jpg',
-                followed: false, fullName: 'Oleg', status: 'I am fine', location: {city: 'Moskov', country: 'Russia'}
-            }
-        ]);
+    let getUsers = () => {
+        if (props.users.length === 0) {
+            axios.get('https://social-network.samuraijs.com/api/1.0/users')
+                .then(response => {
+                    props.setUsers(response.data.items);
+                })
+        }
     }
 
 
-    return <div>
-        {
-            props.users.map((user) => (
-                <div key={user.id}>
+
+
+    return (
+        <div>
+            <button onClick={getUsers}>Get users</button>
+            {
+                props.users.map((user) => (
+                    <div key={user.id} className={styles.users}>
                     <span>
-                        <div>
-                            <img src={user.photoUrl} className={styles.userImg} alt=""/>
+                        <div className={styles.imgWrap}>
+                            <img src={user.photos.small != null ? user.photos.small : userPhoto} className={styles.userImg} alt=""/>
                         </div>
-                        <div>
+                        <div className={styles.buttons}>
                             {user.followed
-                                ? <button onClick={() => props.follow(user.id)}>Follow</button>
-                                : <button onClick={() => props.unfollow(user.id)}>Unfollow</button>
+                                ? <button className={styles.btn} onClick={() => props.follow(user.id)}>Follow</button>
+                                : <button className={styles.btn} onClick={() => props.unfollow(user.id)}>Unfollow</button>
                             }
                         </div>
                     </span>
-                    <span>
+                        <span className={styles.description}>
                         <span>
-                            <div>{user.fullName}</div>
+                            <div className={styles.name}>{user.name}</div>
                             <div>{user.status}</div>
                         </span>
                         <span>
-                            <div>{user.location.country}</div>
-                            <div>{user.location.city}</div>
+                            <div>{'user.location.country'}</div>
+                            <div>{'user.location.city'}</div>
                         </span>
                     </span>
-                </div>)
-            )}
-    </div>
+                    </div>)
+                )}
+        </div>
+    )
 };
 
 export default Users;

@@ -7,7 +7,6 @@ let initialState = {
 };
 
 const usersReducer = (state = initialState, action) => {
-    debugger;
     switch (action.type) {
         case FOLLOW:
             return {
@@ -26,7 +25,6 @@ const usersReducer = (state = initialState, action) => {
                     if (user.id === action.userId) {
                         return { ...user, followed: false }
                     }
-                    debugger
                     return user
                 })
             };
