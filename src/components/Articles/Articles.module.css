@@ -1,0 +1,24 @@
+.topLine {
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    background-color: palegreen;
+    border-radius: 5px;
+    text-align: center;
+}
+.articleBtn {
+    padding: 10px 20px;
+    margin: 5px;
+}
+.article {
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 30px;
+}
+.commentBtn {
+    display: block;
+}
+.commentTextarea {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 5px;
+}

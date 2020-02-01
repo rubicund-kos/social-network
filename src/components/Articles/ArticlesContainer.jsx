@@ -1,15 +1,25 @@
 import React from 'react';
 import {connect} from "react-redux";
+import {allArticleAC, kastanedaArticleAC, oshoArticleAC} from "../../redux/articles-Reducer";
 import Articles from "./Articles";
 
-const mapStateToProps = (state) => {
+let mapStateToProps = (state) => {
     return {
         articlesPage: state.articlesPage
     }
 };
-
-const mapDispatchToProps = () => {
-
+let mapDispatchToProps = (dispatch) => {
+    return {
+        clickShowAllArticles: () => {
+            dispatch(allArticleAC())
+        },
+        clickShowKastanedaArticles: () => {
+            dispatch(kastanedaArticleAC());
+        },
+        clickShowOshoArticles: () => {
+            dispatch(oshoArticleAC())
+        }
+    }
 };
 
 const ArticlesContainer = connect(mapStateToProps, mapDispatchToProps)(Articles);

@@ -1,4 +1,10 @@
+const ALL_ARTICLES = 'ALL-ARTICLES';
+const KASTANEDA_ARTICLES = 'KASTANEDA-ARTICLES';
+const OSHO_ARTICLES = 'OSHO-ARTICLES';
 
+export const kastanedaArticleAC = () => ({type: KASTANEDA_ARTICLES});
+export const allArticleAC = () => ({type: ALL_ARTICLES});
+export const oshoArticleAC = () => ({type: OSHO_ARTICLES});
 
 let initialState = {
     articles: [
@@ -75,7 +81,32 @@ let initialState = {
 };
 
 const articlesReducer = (state = initialState, action) => {
-    return state;
+    switch (action.type) {
+        case ALL_ARTICLES:
+            return initialState;
+        case KASTANEDA_ARTICLES: {
+                let newState = {
+                    ...initialState,
+                    articles: [...initialState.articles]
+                };
+                newState.articles = newState.articles.filter((article) => {
+                    return article.author === 'Karlos Kastaneda'
+                })
+                return newState
+            }
+        case OSHO_ARTICLES: {
+                let newState = {
+                    ...initialState,
+                    articles: [...initialState.articles]
+                };
+                newState.articles = newState.articles.filter((article) => {
+                    return article.author === 'Osho'
+                })
+                return newState
+            }
+        default:
+            return state;
+    }
 };
 
 export default articlesReducer;

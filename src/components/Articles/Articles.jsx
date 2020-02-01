@@ -1,11 +1,19 @@
 import React from 'react';
 import ArticleItem from "./ArticleItem/ArticleItem";
-import {connect} from "react-redux";
+import styles from './Articles.module.css'
 
 
 const Articles = (props) => {
     const showAllArticles = () => {
+      props.clickShowAllArticles()
+    };
 
+    const showKastanedaArticles = () => {
+      props.clickShowKastanedaArticles();
+    };
+
+    const showOshoArticles = () => {
+      props.clickShowOshoArticles()
     }
 
     let articleItems = props.articlesPage.articles.map(article => (
@@ -19,13 +27,12 @@ const Articles = (props) => {
                      key={article.id}/>))
     return (
         <div>
-            <div>
-                <button onClick={showAllArticles}>Все статьи</button>
-                <button>Кастанеда</button>
-                <button>Ошо</button>
+            <div className={styles.topLine}>
+                <button className={styles.articleBtn} onClick={showAllArticles}>Все статьи</button>
+                <button className={styles.articleBtn} onClick={showKastanedaArticles}>Кастанеда</button>
+                <button className={styles.articleBtn} onClick={showOshoArticles}>Ошо</button>
             </div>
             <div>
-
                 {articleItems}
             </div>
 
