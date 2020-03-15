@@ -1,0 +1,66 @@
+$box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8
+$description-text: #777
+
+.profileContent
+  display: grid
+  grid-template-columns: 1fr 3fr
+  margin-top: 20px
+  margin-bottom: 40px
+
+.photoBlock
+  box-sizing: border-box
+  width: 230px
+  background: white
+  padding: 15px
+  box-shadow: $box-shadow
+  border-radius: 3px
+  &_img
+    border-radius: 5px
+    width: 200px
+    height: 300px
+
+.description
+  background: white
+  padding: 20px
+  box-shadow: $box-shadow
+  border-radius: 3px
+  .fullName
+    margin: 0 0 30px
+    text-transform: capitalize
+  .lookingForAJob
+    vertical-align: top
+    .jobsQuestion
+      color: $description-text
+      display: inline-block
+  .status
+    color: $description-text
+    span
+      color: black
+  .aboutMe
+    color: $description-text
+    span
+      color: black
+.jobsAnswer
+  border-radius: 50%
+
+.socialLink
+  margin-top: 50px
+  i
+    font-size: 25px
+    margin-right: 10px
+
+  a
+    &[href*="facebook"]
+      color: #4267b2
+
+    &[href*="vk"]
+      color: #4a76a8
+
+    &[href*="instagram"]
+      color: #c72d91
+
+    &[href*="github"]
+      color: #313030
+
+    &[href*="twitter"]
+      color: #1c9deb

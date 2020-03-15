@@ -1,6 +1,11 @@
 .header {
-    background-color: palegreen;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    background: rgb(141,203,255);
+    background: radial-gradient(circle, rgba(141,203,255,1) 0%, rgba(65,168,255,1) 45%);
     min-height: 50px;
+    align-items: center;
 }
 
 .header img {
@@ -8,5 +13,31 @@
     margin-top: 2px;
     height: 60px;
     border-radius: 10%;
+}
+.loginBlock {
+    text-align: right;
+}
+
+.loginBlock a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding-right: 20px ;
+}
+
+.loginBtn {
+    display: inline-block;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    background-color: red;
+    margin: 5px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all .3s ease;
+}
+.loginBtn:hover {
+    color: black;
 }
 

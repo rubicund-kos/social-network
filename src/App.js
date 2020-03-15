@@ -1,24 +1,30 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
-import Profile from './components/Profile/Profile';
-import UsersContainer from "./components/Users/UsersContainer";
+import ProfileContainer from './components/Profile/ProfileContainer';
 import ArticlesContainer from "./components/Articles/ArticlesContainer";
 import {Route} from "react-router-dom";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import WeatherContainer from "./components/Weather/WeatherContainer";
+import UsersContainer from "./components/Users/UsersContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 const App = (props) => {
     return (
         <div>
-            <Header/>
-
+            <HeaderContainer/>
             <div className='app-wrapper-content'>
                 <Navbar/>
-                <Route path='/dialogs' render={ () => <DialogsContainer/> } />
-                <Route path='/profile' render={ () => <Profile/> } />
-                <Route path='/articles' render={ () => <ArticlesContainer/> } />
-                <Route path='/users' render={ () => <UsersContainer/> } />
+                <Route path='/dialogs'
+                       render={ () => <DialogsContainer/> } />
+                <Route path='/profile/:userId?'
+                       render={ () => <ProfileContainer/> } />
+                <Route path='/articles'
+                       render={ () => <ArticlesContainer/> } />
+                <Route path='/weather'
+                       render={ () => <WeatherContainer/> } />
+                <Route path='/users'
+                       render={ () => <UsersContainer/> } />
 
 
             </div>

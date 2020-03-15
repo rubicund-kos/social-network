@@ -1,0 +1,25 @@
+$text-color: #124b7a
+.nav
+    padding: 20px
+
+.item
+    margin-bottom: 18px
+    color: black
+    display: grid
+    grid-template-columns: 1fr 3fr
+    a
+        font-size: 22px
+        line-height: 22px
+        color: #224b7a
+        text-decoration: none
+        text-transform: uppercase
+        &.activeLink
+            color: lighten($text-color, 10%)
+            font-weight: bold
+    i
+        display: inline-block
+        font-size: 22px
+        line-height: 22px
+        text-align: center
+        padding-right: 10px
+        color: rgba($text-color, .7)
