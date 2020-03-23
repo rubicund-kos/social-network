@@ -5,6 +5,7 @@ import fakeUserPhoto from './../../../assets/images/fakeUserPhoto.png'
 
 
 const ProfileInfo = (props) => {
+    debugger;
     let profile = props.profile;
     if (!profile) {
         return <Preloader/>

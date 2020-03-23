@@ -1,20 +1,20 @@
- import React from 'react';
+import React from 'react';
 import Profile from "./Profile";
 import {connect} from "react-redux";
 import {setUserProfile} from "../../redux/profile-Reducer";
- import {withRouter} from "react-router-dom";
- import {profileAPI} from "../../api/profileAPI";
+import {withRouter} from "react-router-dom";
+import {usersAPI} from "../../api/usersAPI";
 
 class ProfileContainer extends React.Component {
   componentDidMount() {
+    debugger;
     let userId = this.props.match.params.userId;
     if (!userId) {
         userId = 2;
     }
-    profileAPI.getProfile(userId)
-        .then(response => {
-          this.props.setUserProfile(response);
-        })
+    usersAPI.getProfile(userId).then(response => {
+      this.props.setUserProfile(response.data);
+    })
   }
 
   render() {
