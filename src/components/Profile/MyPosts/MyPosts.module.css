@@ -3,9 +3,15 @@
 }
 
 .textarea {
-    min-width: 50%;
+    width: 100%;
     min-height: 60px;
     margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px 4px #d7d8db, 2px 2px 4px 3px #e3e4e8;
+    outline: none;
+}
+.textareaFocus {
+    background: #1c9deb;
 }
 
 .warningMessage {

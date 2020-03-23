@@ -22,6 +22,8 @@ const MyPosts = (props) => {
         props.updateNewPostText(text);
     }
 
+
+    let textAreaStyles = [style.textarea];
     return (
         <div>
             My posts
@@ -30,7 +32,7 @@ const MyPosts = (props) => {
                     <textarea ref={newPostElement}
                               onChange={onPostChange}
                               value={props.newPostText}
-                              className={style.textarea}
+                              className={textAreaStyles.join(' ')}
                     />
                     <p className={style.warningMessage}>Ваше сообщение слишком короткое</p>
                 </div>
