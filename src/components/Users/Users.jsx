@@ -30,7 +30,7 @@ const Users = props => {
                         <div className={styles.userPhotoBlock}>
                             <div>
                                 <NavLink to={'/profile/' + user.id}>
-                                    <img src={user.photos.small != null ? user.photos.small : userImg}
+                                    <img src={user.photos.small !== null ? user.photos.small : userImg}
                                          className={styles.usersPhoto}
                                          alt="User"
                                     />

@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './ProfileInfo.module.sass';
 import Preloader from '../../common/Preloader/Preloader';
+import fakeUserPhoto from './../../../assets/images/fakeUserPhoto.png'
 
 
 const ProfileInfo = (props) => {
@@ -11,7 +12,7 @@ const ProfileInfo = (props) => {
     return (
         <div className={styles.profileContent}>
             <div className={styles.photoBlock}>
-                <img src={profile.photos.large} alt="profilePhoto" className={styles.photoBlock_img}/>
+                <img src={profile.photos.large || fakeUserPhoto} alt="profilePhoto" className={styles.photoBlock_img}/>
             </div>
             <div className={styles.description}>
 
