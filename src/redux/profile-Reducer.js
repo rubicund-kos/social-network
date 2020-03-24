@@ -48,7 +48,6 @@ export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
 
 //ProfilePage Thunk
 export const getProfile = (userId) => {
-    debugger;
     return (dispatch) => {
         profileAPI.getProfile(userId)
             .then(response => {
