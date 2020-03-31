@@ -1,8 +1,9 @@
-import {profileAPI} from "../api/profileAPI";
+import {profileAPI} from "../api/API";
 
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 const SET_USER_PROFILE = "SET_USER_PROFILE";
+const SET_STATUS = "SET_STATUS"
 
 let initialState = {
     posts: [
@@ -12,7 +13,8 @@ let initialState = {
         {id: 4, message: 'Yes, I like this', likesCount: '12'}
     ],
     newPostText: '',
-    profile: null
+    profile: null,
+    status: ''
 };
 
 let profileReducer = (state = initialState, action) => {
@@ -36,6 +38,12 @@ let profileReducer = (state = initialState, action) => {
                 profile: action.profile
             }
         }
+        case SET_STATUS: {
+            return {
+                ...state,
+                status: action.status
+            }
+        }
         default:
             return state;
     }
@@ -45,13 +53,37 @@ let profileReducer = (state = initialState, action) => {
 export const addPostActionCreator = () => ({type: ADD_POST});
 export const onPostChangeActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
+export const setStatus = (status) => ({type: SET_STATUS, status});
 
-//ProfilePage Thunk
+//getProfile Thunk
 export const getProfile = (userId) => {
     return (dispatch) => {
         profileAPI.getProfile(userId)
             .then(response => {
                 dispatch(setUserProfile(response));
+            })
+    }
+}
+
+//getStatus Thunk
+export const getStatus = (userId) => {
+    return (dispatch) => {
+        profileAPI.getStatus(userId)
+            .then(response => {
+                dispatch(setStatus(response));
+            })
+    }
+}
+
+//getStatus Thunk
+export const updateStatus = (status) => {
+    return (dispatch) => {
+        profileAPI.updateStatus(status)
+            .then(response => {
+                if (response.resultCode === 0) {
+                    dispatch(setStatus(status));
+                }
+
             })
     }
 }
