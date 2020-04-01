@@ -5,25 +5,37 @@ import styles from './ProfileInfo.module.sass';
 class ProfileStatus extends React.Component {
     state = {
         editMode: false
-    }
+    };
 
-    toggleEditMode = () => {
+    activateEditMode = () => {
         this.setState({
-            editMode: !this.state.editMode
+            editMode: false
         })
-    }
+    };
+
+    deactivateEditMode = () => {
+        this.setState({
+            editMode: true
+        })
+    };
+
 
     render() {
         return (
             <>
-                {this.state.editMode
-                    ? <div>
-                        <input autoFocus={true} onBlur={this.toggleEditMode} value={this.props.status}></input>
-                    </div>
-                    : <div>
-                        <span onDoubleClick={this.toggleEditMode}>{this.props.status}</span>
+                {!this.state.editMode &&
+                    <div>
+                        <span onDoubleClick={this.activateEditMode}>{this.props.status}</span>
                     </div>
                 }
+                {this.state.editMode &&
+                    <div>
+
+                        <input autoFocus={true} onBlur={this.deactivateEditMode} value={this.props.status}></input>
+                    </div>
+                }
+
+
 
 
             </>
@@ -31,6 +43,6 @@ class ProfileStatus extends React.Component {
         )
     }
 
-}
+};
 
 export default ProfileStatus;
