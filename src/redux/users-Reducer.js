@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import {API} from "../api/API";
+=======
+import {usersAPI} from "../api/API";
+>>>>>>> 9fdca518a7a7e88ce43b2057c9bde4e7711c6d48
 
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
