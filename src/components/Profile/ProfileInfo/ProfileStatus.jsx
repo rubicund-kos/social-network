@@ -3,40 +3,53 @@ import styles from './ProfileInfo.module.sass';
 
 
 class ProfileStatus extends React.Component {
+
     state = {
-        editMode: false
+        editMode: false,
+        status: this.props.status
     }
-    //123123123123
 
     activeteEditMode = () => {
         this.setState({
-            editMode: !this.state.editMode
+            editMode: true
         })
     }
     deactiveteEditMode = () => {
         this.setState({
-            editMode: !this.state.editMode
+            editMode: false
         })
-        this.props.updateStatus()
+        this.props.updateStatus(this.state.status) //меняем глобальный статус
+    }
+    onStatusChange = (event) => {
+        this.setState({
+            status: event.currentTarget.value //меняем локальный статус
+        })
+    }
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.status !== this.props.status) {
+            this.setState({
+                state: this.props.state
+            })
+        }
     }
 
     render() {
-        debugger;
+        console.log('render')
         return (
             <>
                 {!this.state.editMode &&
                     <div>
-                        <span onDoubleClick={this.activeteEditMode}>{this.props.status}</span>
+                        <span onDoubleClick={this.activeteEditMode}>{this.props.status || '-----'}</span>
                     </div>
                 }
                 {this.state.editMode &&
                     <div>
-                        <input autoFocus={true} onBlur={this.deactiveteEditMode} value={this.props.status}></input>
+                        <input onChange={this.onStatusChange}
+                               autoFocus={true}
+                               onBlur={this.deactiveteEditMode}
+                               value={this.state.status}
+                        ></input>
                     </div>
-                }
-
-
-
                 }
 
 
