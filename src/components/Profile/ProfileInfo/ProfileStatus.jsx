@@ -5,9 +5,10 @@ import styles from './ProfileInfo.module.sass';
 class ProfileStatus extends React.Component {
 
     state = {
+
         editMode: false,
         status: this.props.status
-    }
+    };
 
     activeteEditMode = () => {
         this.setState({
@@ -25,6 +26,7 @@ class ProfileStatus extends React.Component {
             status: event.currentTarget.value //меняем локальный статус
         })
     }
+
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.status !== this.props.status) {
             this.setState({
@@ -43,21 +45,20 @@ class ProfileStatus extends React.Component {
                     </div>
                 }
                 {this.state.editMode &&
-                    <div>
-                        <input onChange={this.onStatusChange}
-                               autoFocus={true}
-                               onBlur={this.deactiveteEditMode}
-                               value={this.state.status}
-                        ></input>
-                    </div>
+                <div>
+                    <input onChange={this.onStatusChange}
+                           autoFocus={true}
+                           onBlur={this.deactiveteEditMode}
+                           value={this.state.status}
+                    ></input>
+
+                </div>
                 }
-
-
             </>
 
         )
     }
 
-}
+};
 
 export default ProfileStatus;

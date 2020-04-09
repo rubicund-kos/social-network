@@ -8,7 +8,7 @@ const instance = axios.create({
         }
 });
 
-export const usersAPI = {
+export const API = {
     getUsers(currentPage = 1, pageSize = 10) {
         return (
             instance.get(`users?page=${currentPage}&count=${pageSize}`)
@@ -59,7 +59,6 @@ export const profileAPI = {
         )
     }
 };
-
 export const austAPI = {
     me() {
         return instance.get(`auth/me`)
