@@ -1,10 +1,7 @@
-const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
 const SEND_MESSAGE = "SEND-MESSAGE";
 
 
-//DialogsPage AC
-export const onNewMessageChangeActionCreator = (text) => ({type: UPDATE_NEW_MESSAGE_TEXT, newMessage: text});
-export const onNewMessageSendActionCreator = () => ({type: SEND_MESSAGE});
+
 
 let initialState = {
     messages: [
@@ -26,22 +23,18 @@ let initialState = {
 
 const dialogsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case UPDATE_NEW_MESSAGE_TEXT: {
-            return {
-                ...state,
-                newMessage: action.newMessage};
-        }
         case SEND_MESSAGE: {
-            let newMessage = state.newMessage;
             return {
                 ...state,
-                newMessage: '',
-                messages: [...state.messages, {id: 5, message: newMessage}]
+                messages: [...state.messages, {id: 5, message: action.newMessage}]
             };
         }
         default:
             return state;
     }
 };
+
+//DialogsPage AC
+export const onNewMessageSendActionCreator = (newMessage) => ({type: SEND_MESSAGE, newMessage});
 
 export default dialogsReducer;
