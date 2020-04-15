@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './MyPosts.module.css';
 import Post from './Post/Post';
+import {Field, reduxForm} from "redux-form";
 
 
 
@@ -11,38 +12,31 @@ const MyPosts = (props) => {
                                                        key={post.id}
     />);
 
-    const newPostElement = React.createRef()
-
-    const onAddPost = () => {
-        props.addPost();
+    const onAddPost = (values) => {
+        props.addPost(values.newPostText);
     };
-
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
-        props.updateNewPostText(text);
-    }
-
-
-    let textAreaStyles = [style.textarea];
     return (
         <div>
             My posts
-            <div>
-                <div className={style.inputArea}>
-                    <textarea ref={newPostElement}
-                              onChange={onPostChange}
-                              value={props.newPostText}
-                              className={textAreaStyles.join(' ')}
-                    />
-                    <p className={style.warningMessage}>Ваше сообщение слишком короткое</p>
-                </div>
-                <button className={style.sendButton} onClick={onAddPost}>Add post</button>
-            </div>
+            <NewPostFormRedux onSubmit={onAddPost}/>
             <div className={style.posts}>
                 {postElements}
             </div>
         </div>
     )
 }
+
+const NewPostForm = props => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+            <Field component="Textarea"
+                   name="newPostText"
+                   placeholder="Enter Post Text"
+            />
+            <button>Send</button>
+        </form>
+    )
+};
+const NewPostFormRedux = reduxForm({form: "newPostForm"})(NewPostForm);
 
 export default MyPosts;

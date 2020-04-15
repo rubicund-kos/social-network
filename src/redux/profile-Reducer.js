@@ -12,7 +12,6 @@ let initialState = {
         {id: 3, message: 'That\'s great', likesCount: '2'},
         {id: 4, message: 'Yes, I like this', likesCount: '12'}
     ],
-    newPostText: '',
     profile: null,
     status: ''
 };
@@ -22,14 +21,7 @@ let profileReducer = (state = initialState, action) => {
         case ADD_POST: {
             return {
                 ...state,
-                posts: [...state.posts, {id: 5, message: state.newPostText, likesCount: 0}],
-                newPostText: ''
-            }
-        }
-        case UPDATE_NEW_POST_TEXT: {
-            return {
-                ...state,
-                newPostText: action.newText
+                posts: [...state.posts, {id: 5, message: action.newPostText, likesCount: 0}]
             }
         }
         case SET_USER_PROFILE: {
@@ -50,8 +42,7 @@ let profileReducer = (state = initialState, action) => {
 };
 
 //ProfilePage ActionCreator
-export const addPostActionCreator = () => ({type: ADD_POST});
-export const onPostChangeActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
+export const addPostActionCreator = (newPostText) => ({type: ADD_POST, newPostText});
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
 export const setStatus = (status) => ({type: SET_STATUS, status});
 

@@ -46,7 +46,7 @@ const AddMessageForm = props => {
             <button>Send</button>
         </form>
     )
-}
+};
 
 const AddMessageFormRedux = reduxForm({form: "dialogsAddMessageForm"})(AddMessageForm);
 
