@@ -4,14 +4,13 @@ import Post from './Post/Post';
 import {Field, reduxForm} from "redux-form";
 
 
-
 const MyPosts = (props) => {
-    let postElements = props.posts.map( post =>  <Post id={post.id}
-                                                       message={post.message}
-                                                       likesCount={post.likesCount}
-                                                       key={post.id}
-    />);
-
+    let postElements = props.posts.map(post =>
+        (<Post id={post.id}
+                  message={post.message}
+                  likesCount={post.likesCount}
+                  key={post.id}/>)
+    )
     const onAddPost = (values) => {
         props.addPost(values.newPostText);
     };
@@ -26,7 +25,7 @@ const MyPosts = (props) => {
     )
 }
 
-const NewPostForm = props => {
+const AddNewPostForm = props => {
     return (
         <form onSubmit={props.handleSubmit}>
             <Field component="Textarea"
@@ -37,6 +36,6 @@ const NewPostForm = props => {
         </form>
     )
 };
-const NewPostFormRedux = reduxForm({form: "newPostForm"})(NewPostForm);
+const NewPostFormRedux = reduxForm({form: "newPostForm"})(AddNewPostForm);
 
 export default MyPosts;
