@@ -9,8 +9,6 @@ import {
 } from "../../redux/users-Reducer";
 import Users from "./Users";
 import Preloader from "../common/Preloader/Preloader";
-import {withAuthRedirectComponent} from "../../hoc/withAuthRedirect";
-import Dialogs from "../Dialogs/Dialogs";
 import {compose} from "redux";
 
 
