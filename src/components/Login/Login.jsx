@@ -5,10 +5,11 @@ import {login} from "../../redux/auth-reducer";
 import {Redirect} from "react-router-dom";
 import {required} from "../../utils/validators/validators";
 import {Input} from "../common/FormControls/FormControls";
+import styles from "./Login.module.sass";
 
 const LoginForm = props => {
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={props.handleSubmit} className="loginForm">
             <div>
                 <Field name={"email"}
                        placeholder={"Email"}
@@ -23,8 +24,15 @@ const LoginForm = props => {
                        validate={[required]}/>
             </div>
             <div>
-                <Field name={"rememberMe"} type={"checkbox"} component={Input}/>Remember me
+                <Field name={"rememberMe"}
+                       id="rememberMe"
+                       type={"checkbox"}
+                       component={Input}
+                       className={styles.remember}
+                />Remember me
             </div>
+            {props.error && <div className={styles.formSummaryError}>{props.error}</div>}
+
             <div>
                 <button>Log In</button>
             </div>
@@ -35,14 +43,14 @@ const LoginReduxForm = reduxForm({form: "login"})(LoginForm);
 
 const Login = props => {
     const onSubmit = (formData) => {
-        props.login(formData.email, formData.password, formData.rememberMe)
+        let {email, password, rememberMe} = formData;
+        props.login(email, password, rememberMe);
     }
-
     if (props.isAuth) {
         return <Redirect to={"/profile"}/>
     }
     return (
-        <div>
+        <div className={styles.loginForm_wrapper}>
             <h1>Login</h1>
             <LoginReduxForm onSubmit={onSubmit}/>
         </div>

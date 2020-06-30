@@ -23,12 +23,14 @@ const authReducer = (state= initialState, action) => {
     }
 };
 
-
+//ActionCreator для установки в стейт данных о пользователе. Устанавливаем userId, email, login зарегистрированного
+//пользователя. Или наоборот зануляем стейт, при вылогинизации.
 export const setAuthUserData = (userId, email, login, isAuth) => ({
     type: SET_USER_DATA,
     payload: {userId, email, login, isAuth}
 });
 
+//Санка для проверки, залогинен ли в сети.
 export const getAuthUserData = () => (dispatch) => {
     authAPI.me()
         .then(response => {
@@ -40,21 +42,19 @@ export const getAuthUserData = () => (dispatch) => {
 }
 
 export const login = (email, password, rememberMe) => (dispatch) => {
-    let action = stopSubmit("login", {email: "email is wrong"});
-    dispatch(action);
-    return;
     authAPI.login(email, password, rememberMe)
         .then(response => {
             if (response.data.resultCode === 0) {
                 dispatch(getAuthUserData());
             } else {
-
+                let message = response.data.messages.length > 0 ? response.data.messages[0] : "Some error";
+                dispatch(stopSubmit('login', {_error: message}));
             }
         });
 };
 
-export const logout = (email, password, rememberMe) => (dispatch) => {
-    authAPI.logout(email, password, rememberMe)
+export const logout = () => (dispatch) => {
+    authAPI.logout()
         .then(response => {
             if (response.data.resultCode === 0) {
                 dispatch(setAuthUserData(null, null, null, false));

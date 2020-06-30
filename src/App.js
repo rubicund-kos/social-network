@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.sass';
 import Navbar from './components/Navbar/Navbar';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import ArticlesContainer from "./components/Articles/ArticlesContainer";
