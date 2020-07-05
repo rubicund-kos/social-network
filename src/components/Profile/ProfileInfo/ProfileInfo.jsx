@@ -3,6 +3,7 @@ import styles from './ProfileInfo.module.sass';
 import Preloader from '../../common/Preloader/Preloader';
 import fakeUserPhoto from './../../../assets/images/fakeUserPhoto.png'
 import ProfileStatus from "./ProfileStatus";
+import SocialLink from "./SocialLink/SocialLink";
 
 
 const ProfileInfo = (props) => {
@@ -36,8 +37,14 @@ const ProfileInfo = (props) => {
                     <span>{profile.lookingForAJobDescription}</span>
                 </div>
                 <div className={styles.socialLink}>
-                    <a href={profile.contacts.facebook || 'http://facebook.com'}><i
-                        className="fab fa-facebook-f"></i></a>
+                    {/*{profile.contacts.map((socialLink) => {*/}
+                    {/*    return (*/}
+                    {/*        <a href={profile.contacts.facebook || 'http://facebook.com'}>*/}
+                    {/*            <i className="fab fa-facebook-f"></i>*/}
+                    {/*        </a>*/}
+                    {/*    )*/}
+                    {/*})}*/}
+                    <a href={profile.contacts.facebook || 'http://facebook.com'}><i className="fab fa-facebook-f"></i></a>
                     <a href={profile.contacts.vk || 'http://vk.com'}><i className="fab fa-vk"></i></a>
                     <a href={profile.contacts.github || 'http://github.com'}><i className="fab fa-github"></i></a>
                     <a href={profile.contacts.instagram || 'http://instagram.com'}><i className="fab fa-instagram"></i></a>
