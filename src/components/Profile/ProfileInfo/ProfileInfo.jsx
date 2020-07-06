@@ -2,9 +2,7 @@ import React from 'react';
 import styles from './ProfileInfo.module.sass';
 import Preloader from '../../common/Preloader/Preloader';
 import fakeUserPhoto from './../../../assets/images/fakeUserPhoto.png'
-import ProfileStatus from "./ProfileStatus";
-import SocialLink from "./SocialLink/SocialLink";
-
+import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 const ProfileInfo = (props) => {
     let profile = props.profile;
@@ -19,7 +17,7 @@ const ProfileInfo = (props) => {
             <div className={styles.description}>
 
                 <h2 className={styles.fullName}>{profile.fullName}</h2>
-                <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+                <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
                 <p className={styles.aboutMe}>Обо мне:&nbsp;
                     <span>
                         {profile.aboutMe}
@@ -37,13 +35,6 @@ const ProfileInfo = (props) => {
                     <span>{profile.lookingForAJobDescription}</span>
                 </div>
                 <div className={styles.socialLink}>
-                    {/*{profile.contacts.map((socialLink) => {*/}
-                    {/*    return (*/}
-                    {/*        <a href={profile.contacts.facebook || 'http://facebook.com'}>*/}
-                    {/*            <i className="fab fa-facebook-f"></i>*/}
-                    {/*        </a>*/}
-                    {/*    )*/}
-                    {/*})}*/}
                     <a href={profile.contacts.facebook || 'http://facebook.com'}><i className="fab fa-facebook-f"></i></a>
                     <a href={profile.contacts.vk || 'http://vk.com'}><i className="fab fa-vk"></i></a>
                     <a href={profile.contacts.github || 'http://github.com'}><i className="fab fa-github"></i></a>
