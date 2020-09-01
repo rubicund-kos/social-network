@@ -52,7 +52,7 @@ class ProfileStatus extends React.Component {
                            value={this.state.status}
                     ></input>
 
-                </div>
+                </div> 
                 }
             </>
 
