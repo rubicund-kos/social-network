@@ -9,7 +9,7 @@ const Users = ({currentPage, totalUsersCount, pageSize, onPageChanged,
         <div className={styles.usersWrap}>
             <Paginator
                 currentPage={currentPage}
-                totalUsersCount={totalUsersCount}
+                totalItemsCount={totalUsersCount}
                 pageSize={pageSize}
                 onPageChanged={onPageChanged}
             />
