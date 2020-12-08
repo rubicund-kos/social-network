@@ -1,10 +1,8 @@
 import React from 'react';
 import './App.sass';
 import Navbar from './components/Navbar/Navbar';
-// import ProfileContainer from './components/Profile/ProfileContainer';
-// import ArticlesContainer from "./components/Articles/ArticlesContainer";
 import {Route, withRouter} from "react-router-dom";
-// import DialogsContainer from "./components/Dialogs/DialogsContainer";
+
 import UsersContainer from "./components/Users/UsersContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
@@ -36,18 +34,13 @@ class App extends React.Component {
                                render={withSuspense(DialogsContainer)}
                         />
                         <Route path='/profile/:userId?'
-                               render={withSuspense(DialogsContainer)}/>
+                               render={withSuspense(ProfileContainer)}/>
                         <Route path='/articles'
-                               render={() => {
-                                   return (
-                                       <React.Suspense fallback={<Preloader />}>
-                                           <ArticlesContainer/>
-                                       </ React.Suspense>)
-                               }}/>
+                               render={withSuspense(ArticlesContainer)}/>
                         <Route path='/users'
-                               render={() => <UsersContainer/>}/>
+                               render={withSuspense(UsersContainer)}/>
                         <Route path='/login'
-                               render={() => <Login/>}/>
+                               render={withSuspense(Login)}/>
 
 
                     </div>
