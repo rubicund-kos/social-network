@@ -9,10 +9,16 @@ const ProfileInfo = (props) => {
     if (!profile) {
         return <Preloader/>
     }
+    const onMainPhotoSelected = (event) => {
+        if (event.target.files.length) {
+            props.savePhoto(event.target.files[0])
+        }
+    }
     return (
         <div className={styles.profileContent}>
             <div className={styles.photoBlock}>
                 <img src={profile.photos.large || fakeUserPhoto} alt="profilePhoto" className={styles.photoBlock_img}/>
+                {props.isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>}
             </div>
             <div className={styles.description}>
 
