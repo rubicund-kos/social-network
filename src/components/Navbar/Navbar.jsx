@@ -26,11 +26,11 @@ const Navbar = () => {
         </div>
         <div className={s.item}>
             <i className="fas fa-music"></i>
-            <a>Music</a>
+            <a href="/#">Music</a>
         </div>
         <div className={s.item}>
             <i className="fas fa-cog"></i>
-            <a>Settings</a>
+            <a href="/#">Settings</a>
         </div>
     </nav>
 }

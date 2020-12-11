@@ -31,9 +31,6 @@ class ProfileContainer extends React.Component {
     }
 
   }
-  savePhoto() {
-
-  }
 
   render() {
 
